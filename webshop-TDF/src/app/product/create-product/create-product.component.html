@@ -6,8 +6,11 @@
             <form (ngSubmit)="submit()">
                 <div class="form-floating product-name">
                     <input type="text" name="productName" class="form-control" id="productName" 
-                    [(ngModel)]="product.name" required="true">
+                    [(ngModel)]="product.name" required minlength="4">
                     <label for="productName">Product name:</label>
+                    <div class="invalid-feedback">
+                        Product name is required.
+                    </div>
                 </div>
                 <div class="form-floating product-code">
                     <input type="text" name="productCode" class="form-control" id="productCode" 
