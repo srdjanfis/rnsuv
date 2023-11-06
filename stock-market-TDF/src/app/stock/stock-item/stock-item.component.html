@@ -1,0 +1,23 @@
+<div class="container d-flex justify-content-center"> 
+  <div class="row">
+    <div class="col" *ngFor="let stock of stocks; index as i">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{stock.name}}</h5>
+                <h6 class="card-title">{{stock.code}}</h6>
+                <h6 class="card-title">{{stock.exchange}}</h6>
+                <p class="card-text">
+                    Price: €{{stock.price}}
+                </p>
+                <p class="card-text">Prev. price: €{{stock.previousPrice}}</p>
+                <button type="button"  
+                class="btn btn-outline-secondary"
+                [class]="stock.favourite ? 'positive' : 'negative'"
+                (click)="toggleFavorite(i)">
+                <b>FAVOURITE</b>
+                </button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

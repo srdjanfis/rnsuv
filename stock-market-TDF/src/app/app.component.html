@@ -1,0 +1,7 @@
+<div style="text-align: center">
+  <h1>
+    {{title}}
+  </h1>
+  <app-stock-item [stocks]="stocksObj"></app-stock-item>
+  <app-create-stock (emitStock)="onEmitStock($event)"></app-create-stock>
+</div>
