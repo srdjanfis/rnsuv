@@ -1,0 +1,19 @@
+
+<div class="container d-flex justify-content-center">
+  <div class="row">
+    <div class="col" *ngFor="let product of products; index as i">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.code}}</p>
+          <p class="card-text" [class]="product.price>50.0 ? 'high' : 'low'">{{product.price}} €</p>
+          <button
+          
+          href="#" 
+          class="btn btn-primary"
+          (click)="toggleFavourite(i)">Priljubljen: {{product.favorite}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
