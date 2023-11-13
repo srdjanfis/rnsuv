@@ -1,0 +1,50 @@
+<h2>Create student</h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <form (ngSubmit)="submit()">
+                <div>
+                    <label for="firstName" 
+                           class="form-label">Ime:</label>
+                    <input type="text" 
+                           class="form-control" 
+                           id="firstName" 
+                           name="firstName"
+                           required
+                           [(ngModel)]="student.name">
+                </div>
+                <div>
+                    <label for="lastName" 
+                           class="form-label">Priimek:</label>
+                    <input type="text" 
+                           class="form-control" 
+                           id="lastName" 
+                           name="lastName"
+                           required
+                           [(ngModel)]="student.lastName">
+                </div>
+                <div>
+                    <label for="saldo" 
+                           class="form-label">Dobroimetje:</label>
+                    <input type="text" 
+                           class="form-control" 
+                           id="saldo" 
+                           name="saldo"
+                           required
+                           [(ngModel)]="student.saldo">
+                </div>
+                <hr class="my-4">
+                <div>
+                    <input type="checkbox" 
+                           class="form-check-input" 
+                           id="shared"
+                           name="shared"
+                           [(ngModel)]="student.shared">
+                    <label class="form-check-label" for="shared">Deljenje podatkov</label>
+                </div>
+                <hr class="my-4">
+                <button class="w-100 btn btn-primary btn-lg" type="submit">Ustvari študenta</button>
+            </form>
+        </div>
+    </div>
+</div>
