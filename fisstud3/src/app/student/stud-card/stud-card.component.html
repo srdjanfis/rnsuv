@@ -1,0 +1,22 @@
+<div class="container d-flex justify-content-center">
+    <div class="card" style="width: 18rem;" *ngFor="let student of students; index as i">
+        <div class="card-body">
+            <h5 class="card-title">{{student.ime}} {{student.priimek}}</h5>
+            <p class="card-text" [class]="student.saldo>0 ? 'green' : 'red'">Saldo: €{{student.saldo}}</p>
+            <button type="button" 
+                [class]="student.active ? 'green' : 'red'"    
+                class="btn btn-outline-secondary">
+                <b>{{activeGranted(i)}}</b>  
+            </button>
+            <div class="form-check form-switch">
+                <input class="form-check-input" 
+                       type="checkbox" 
+                       role="switch" 
+                       id="flexSwitchCheckChecked" 
+                       unchecked
+                       (click)="toggleActive(i)">
+                <label class="form-check-label" for="flexSwitchCheckChecked">Spremeni aktivnost</label>
+            </div>
+        </div>
+    </div>
+</div>
