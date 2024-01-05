@@ -1,0 +1,25 @@
+<h2>Register Form</h2>
+<h3>{{message}}</h3>
+<div class="form-group fluid-container">
+    <div class="row justify-content-center">
+        <div class="col-3">
+            <form (ngSubmit)="register()" #loginForm="ngForm">
+                <div class="form-floating product-name">
+                    <input type="text" name="username" class="form-control" id="username" 
+                    [(ngModel)]="username" required minlength="4">
+                    <label for="username">Username:</label>
+                    <div class="invalid-feedback">
+                        Username is required.
+                    </div>
+                </div>
+                <div class="form-floating product-code">
+                    <input type="password" name="password" class="form-control" id="password" 
+                    [(ngModel)]="password">
+                    <label for="password">Password:</label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+</div>

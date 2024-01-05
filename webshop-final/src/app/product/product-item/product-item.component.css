@@ -1,0 +1,23 @@
+.high{
+    color: red;
+}
+.low{
+    color: green;
+}
+.warning {
+    background: hsl(48, 100%, 67%);
+    border: 5px solid hsl(48, 100%, 67%);
+    color: black;
+}
+
+.error {
+    background: hsl(348, 100%, 61%);
+    border: 5px solid hsl(348, 100%, 61%);
+    color: white;
+}
+
+.success {
+    background: hsl(141, 71%, 48%);
+    border: 5px solid hsl(141, 71%, 48%);
+    color: white;
+}

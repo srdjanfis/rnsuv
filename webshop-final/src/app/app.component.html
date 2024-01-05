@@ -1,0 +1,17 @@
+<div style="text-align: center">
+    <div class="row">
+        <h1>Spletna trgovina</h1>
+    </div>
+    <div class="row">
+        <div class="links">
+            <span><a routerLink="/login" routerLinkActive="active">Login</a></span>
+            <span><a routerLink="/register" routerLinkActive="active">Register</a></span>
+            <span><a routerLink="/products/list" routerLinkActive="active">Product List</a></span>
+            <span><a routerLink="/products/create" routerLinkActive="active">Create product</a></span>
+            <span><a routerLink="/logout" routerLinkActive="active">Logout</a></span>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+    <hr class="my-4">
+    <div>{{messageService.getMessage()}}</div>
+</div>
