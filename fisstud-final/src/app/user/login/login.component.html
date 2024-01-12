@@ -1,0 +1,31 @@
+<div class="container w-25">
+  <form>
+
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+    <div class="form-floating">
+      <input type="username" 
+      class="form-control" 
+      id="floatingInput" 
+      placeholder="Username"
+      name="username"
+      [(ngModel)]="username">
+      <label for="floatingInput">Username</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" 
+      class="form-control" 
+      id="floatingPassword" 
+      placeholder="Password"
+      name="password"
+      [(ngModel)]="password">
+      <label for="floatingPassword">Password</label>
+    </div>
+<hr/>
+    <button class="w-100 btn btn-lg btn-primary" 
+        type="submit"
+        (click)="doLogin()">
+        Login</button>
+  </form>
+  <h2>{{message}}</h2>
+</div> 
