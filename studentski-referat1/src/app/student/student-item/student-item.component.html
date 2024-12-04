@@ -1,0 +1,31 @@
+<div class="card" style="width: 18rem;">
+  <img [src]="student.imageUrl" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h4 class="card-title">{{student.name}} {{student.lastName}}</h4>
+    <h5 class="card-title">ID: {{student.idNumber}}</h5>
+    <p class="card-text">Študijski program: {{student.studyProgram}}</p>
+
+    <div class="form-check form-switch">
+      <input class="form-check-input"
+             type="checkbox"
+             role="switch"
+             id="flexSwitchCheckChecked"
+             (click)="toggleFullTime()"
+             [checked]="student.fullTimeStudent">
+      <label class="form-check-label"
+             for="flexSwitchCheckChecked">Full-time student: {{student.fullTimeStudent}}</label>
+    </div>
+
+    <div>
+      <span>Exams to go: </span>
+      <button type="button"
+              class="btn btn-danger"
+              (click)="decreaseExams()"
+              [disabled]="student.noOfExamsLeft <= 0"> - </button>
+      <span>  {{student.noOfExamsLeft}} ({{student.noOfExams}})  </span>
+      <button type="button"
+              class="btn btn-success"
+              (click)="increaseExams()"> + </button>
+    </div>
+  </div>
+</div>
