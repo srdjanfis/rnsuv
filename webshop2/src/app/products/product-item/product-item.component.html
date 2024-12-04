@@ -1,0 +1,36 @@
+<div class="card"
+     style="width: 18rem;"
+     [class]="product.onSale ? 'green-background' : ''">
+  <img [src]="product.imageUrl" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h4 class="card-title" [ngClass]="productClasses">{{product.name}}</h4>
+    <h5 class="card-title">{{product.price}} €</h5>
+    
+    @if(!product.onSale){
+      <p class="card-text">The product has a steep price!</p>
+    }@else{
+      <p class="card-text">The product is on sale!</p>
+    }
+    
+    <div class="form-check form-switch">
+      <input class="form-check-input" 
+             type="checkbox" 
+             role="switch" 
+             id="onSaleSwitch" 
+             (click)="changeOnSale()"
+             [checked]="product.onSale">
+      <label class="form-check-label" for="onSaleSwitch">on sale</label>
+    </div>
+    
+    <div>
+      <button type="button"
+              class="btn btn-danger"
+              (click)="decreaseQuantity()"
+              [disabled]="product.quantity <= 0"> - </button>
+      <span>  {{product.quantity}}  </span>
+      <button type="button"
+              class="btn btn-success"
+              (click)="increaseQuantity()"> + </button>
+    </div>
+  </div>
+</div>
