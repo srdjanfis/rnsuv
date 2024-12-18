@@ -1,0 +1,50 @@
+<div class="container">
+    <form (ngSubmit)="createProduct()">
+        <div class="mb-3">
+          <label for="product-name" class="form-label">Product name</label>
+          <input type="text" 
+                 class="form-control" 
+                 id="product-name"
+                 name="product-name"
+                 aria-describedby="productHelp"
+                 required
+                 [(ngModel)]="product.name">
+          <div id="productHelp" class="form-text">Product name is required!</div>
+        </div>
+        <div class="mb-3">
+            <label for="product-price" class="form-label">Product price</label>
+            <input type="number" 
+                   class="form-control" 
+                   id="product-price"
+                   name="product-price" 
+                   required
+                   [(ngModel)]="product.price">
+        </div>
+        <div class="mb-3">
+            <label for="product-image" class="form-label">Product image</label>
+            <input type="text" 
+                   class="form-control" 
+                   id="product-image"
+                   name="product-image" 
+                   [(ngModel)]="product.imageUrl">
+        </div>
+        <div class="mb-3">
+            <label for="product-quantity" class="form-label">Product quantity</label>
+            <input type="number" 
+                   class="form-control" 
+                   id="product-quantity"
+                   name="product-quantity" 
+                   [(ngModel)]="product.quantity">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" 
+                 class="form-check-input" 
+                 id="product-onsale"
+                 name="product-onsale"
+                 [(ngModel)]="product.onSale">
+          <label class="form-check-label" for="product-onsale">On sale</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Create product</button>
+      </form>
+      <div>{{product | json}}</div>
+</div>
