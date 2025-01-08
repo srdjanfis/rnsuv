@@ -1,0 +1,15 @@
+.green-background {
+  background-color: skyblue;
+}
+.on-sale{
+  color:violet
+}
+.not-on-sale{
+  color:brown;
+}
+.many-items{
+  font-weight: bold;
+}
+.few-items{
+  font-style: italic;
+}
