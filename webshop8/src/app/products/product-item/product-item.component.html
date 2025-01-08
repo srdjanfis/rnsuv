@@ -1,0 +1,25 @@
+<div class="row">
+  @for(product of products; track product; let i = $index){
+  <div class="card" style="width: 18rem;">
+
+    <div class="card-body">
+
+      <h4 class="card-title">{{product.name}}</h4>
+      <h5 class="card-title">{{product.price}} €</h5>
+
+      @if(!product.favorite){
+      <p class="card-text">The product is not favorite</p>
+      }@else{
+      <p class="card-text">The product is favorite</p>
+      }
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="favoriteSwitch" (click)="changeFavorite(i)"
+          [checked]="product.favorite">
+        <label class="form-check-label" for="favoriteSwitch">favorite</label>
+      </div>
+
+    </div>
+  </div>
+  }
+</div>
