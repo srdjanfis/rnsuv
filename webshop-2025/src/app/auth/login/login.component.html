@@ -1,0 +1,24 @@
+<form>
+    <h3>Login</h3>
+    <div class="mb-3">
+      <label for="login-username" class="form-label">Username</label>
+      <input type="text" 
+             class="form-control" 
+             id="login-username" 
+             aria-describedby="usernameHelp"
+             name="username"
+             [(ngModel)]="authRequest.username">
+      <div id="usernameHelp" class="form-text">Username is mandatory.</div>
+    </div>
+    <div class="mb-3">
+      <label for="login-password" class="form-label">Password</label>
+      <input type="password" 
+             class="form-control" 
+             id="login-password"
+             name="password"
+             [(ngModel)]="authRequest.password">
+    </div>
+    <span>Please register <a routerLink="/register" routerLinkActive="active">here</a></span>
+    <br>
+    <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+</form>
