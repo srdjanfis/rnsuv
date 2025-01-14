@@ -1,0 +1,72 @@
+<div class="col-md-6">
+    <form (ngSubmit)="createStudent()">
+        <div class="mb-3">
+          <label for="student-name" class="form-label">First name</label>
+          <input type="text" 
+                 class="form-control" 
+                 id="student-name"
+                 name="student-name"
+                 required
+                 [(ngModel)]="student.name">
+        </div>
+        <div class="mb-3">
+            <label for="student-lastname" class="form-label">Last name</label>
+            <input type="text" 
+                   class="form-control" 
+                   id="student-lastname"
+                   name="student-lastname"
+                   required
+                   [(ngModel)]="student.lastName">
+        </div>
+        <div class="mb-3">
+            <label for="student-idnumber" class="form-label">ID number</label>
+            <input type="number" 
+                   class="form-control" 
+                   id="student-idnumber"
+                   name="student-idnumber" 
+                   required
+                   [(ngModel)]="student.idNumber">
+        </div>
+        <div class="mb-3">
+            <label for="student-imageurl" class="form-label">Image URL</label>
+            <input type="text" 
+                   class="form-control" 
+                   id="student-imageurl"
+                   name="student-imageurl"                   
+                   [(ngModel)]="student.imageUrl">
+        </div>
+        <div class="mb-3">
+            <label for="student-noofexams" class="form-label">No. of exams</label>
+            <input type="number" 
+                   class="form-control" 
+                   id="student-noofexams"
+                   name="student-noofexams" 
+                   required
+                   [(ngModel)]="student.noOfExams">
+        </div>
+        <div class="mb-3">
+            <label for="student-noofexamsleft" class="form-label">No. of exams left</label>
+            <input type="number" 
+                   class="form-control" 
+                   id="student-noofexamsleft"
+                   name="student-noofexamsleft" 
+                   required
+                   [(ngModel)]="student.noOfExamsLeft">
+        </div>
+        <select name="sel" class="form-select form-select-sm" aria-label="Study program" [(ngModel)]="student.studyProgram">
+            <option name="rst" value="RST" >RST</option>
+            <option name="pz" value="PZ" >PZ</option>
+            <option name="isd" value="ISD" >ISD</option>
+        </select>
+        <div class="mb-3 form-check form-switch">
+          <input type="checkbox" 
+                 role="switch"
+                 class="form-check-input" 
+                 id="student-fulltime"
+                 name="student-fulltime"
+                 [(ngModel)]="student.fullTimeStudent">
+          <label class="form-check-label" for="student-fulltime">Full time</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Create student</button>
+      </form>
+</div>

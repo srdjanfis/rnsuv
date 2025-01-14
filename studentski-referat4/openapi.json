@@ -1,0 +1,500 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "OpenAPI definition",
+      "version": "v0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8080",
+        "description": "Generated server url"
+      }
+    ],
+    "paths": {
+      "/api/students/{idNumber}": {
+        "get": {
+          "tags": [
+            "student-resource"
+          ],
+          "operationId": "getStudent",
+          "parameters": [
+            {
+              "name": "idNumber",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/StudentDTO"
+                  }
+                }
+              }
+            },
+            "4xx/5xx": {
+              "description": "Error",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ApiErrorResponse"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "student-resource"
+          ],
+          "operationId": "updateStudent",
+          "parameters": [
+            {
+              "name": "idNumber",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentDTO"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              }
+            },
+            "4xx/5xx": {
+              "description": "Error",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ApiErrorResponse"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "student-resource"
+          ],
+          "operationId": "deleteStudent",
+          "parameters": [
+            {
+              "name": "idNumber",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "No Content"
+            },
+            "4xx/5xx": {
+              "description": "Error",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ApiErrorResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/sUsers/{email}": {
+        "get": {
+          "tags": [
+            "s-user-resource"
+          ],
+          "operationId": "getSUser",
+          "parameters": [
+            {
+              "name": "email",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SUserDTO"
+                  }
+                }
+              }
+            },
+            "4xx/5xx": {
+              "description": "Error",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ApiErrorResponse"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "s-user-resource"
+          ],
+          "operationId": "updateSUser",
+          "parameters": [
+            {
+              "name": "email",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SUserDTO"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "4xx/5xx": {
+              "description": "Error",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ApiErrorResponse"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "s-user-resource"
+          ],
+          "operationId": "deleteSUser",
+          "parameters": [
+            {
+              "name": "email",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "No Content"
+            },
+            "4xx/5xx": {
+              "description": "Error",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ApiErrorResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/students": {
+        "get": {
+          "tags": [
+            "student-resource"
+          ],
+          "operationId": "getAllStudents",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/StudentDTO"
+                    }
+                  }
+                }
+              }
+            },
+            "4xx/5xx": {
+              "description": "Error",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ApiErrorResponse"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "student-resource"
+          ],
+          "operationId": "createStudent",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentDTO"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "201": {
+              "description": "Created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              }
+            },
+            "4xx/5xx": {
+              "description": "Error",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ApiErrorResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/sUsers": {
+        "get": {
+          "tags": [
+            "s-user-resource"
+          ],
+          "operationId": "getAllSUsers",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/SUserDTO"
+                    }
+                  }
+                }
+              }
+            },
+            "4xx/5xx": {
+              "description": "Error",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ApiErrorResponse"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "s-user-resource"
+          ],
+          "operationId": "createSUser",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SUserDTO"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "201": {
+              "description": "Created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "4xx/5xx": {
+              "description": "Error",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ApiErrorResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "ApiErrorResponse": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "code": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "fieldErrors": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ApiFieldError"
+              }
+            }
+          }
+        },
+        "ApiFieldError": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "property": {
+              "type": "string"
+            },
+            "rejectedValue": {
+              "type": "object"
+            },
+            "path": {
+              "type": "string"
+            }
+          }
+        },
+        "StudentDTO": {
+          "type": "object",
+          "properties": {
+            "idNumber": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "maxLength": 255,
+              "minLength": 0,
+              "type": "string"
+            },
+            "lastName": {
+              "maxLength": 255,
+              "minLength": 0,
+              "type": "string"
+            },
+            "imageUrl": {
+              "maxLength": 255,
+              "minLength": 0,
+              "type": "string"
+            },
+            "studyProgram": {
+              "maxLength": 255,
+              "minLength": 0,
+              "type": "string"
+            },
+            "noOfExams": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "noOfExamsLeft": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "fullTimeStudent": {
+              "type": "boolean"
+            }
+          }
+        },
+        "SUserDTO": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "maxLength": 255,
+              "minLength": 0,
+              "type": "string"
+            },
+            "password": {
+              "maxLength": 255,
+              "minLength": 0,
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
