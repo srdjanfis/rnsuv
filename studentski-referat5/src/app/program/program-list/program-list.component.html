@@ -1,0 +1,20 @@
+<div class="container">
+    <h4>Študijski programi</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(program of programs; track program){
+            <tr>
+                <th scope="row">{{program.id}}</th>
+                <td>{{program.name}}</td>
+
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

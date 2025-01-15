@@ -1,0 +1,22 @@
+<form>
+    <h3>Register</h3>
+    <div class="mb-3">
+      <label for="register-username" class="form-label">Username</label>
+      <input type="text" 
+             class="form-control" 
+             id="register-username" 
+             aria-describedby="register-usernameHelp"
+             name="username"
+             [(ngModel)]="authRequest.username">
+      <div id="register-usernameHelp" class="form-text">Username is mandatory.</div>
+    </div>
+    <div class="mb-3">
+      <label for="register-password" class="form-label">Password</label>
+      <input type="password" 
+             class="form-control" 
+             id="register-password"
+             name="password"
+             [(ngModel)]="authRequest.password">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="register()">Register</button>
+</form>
