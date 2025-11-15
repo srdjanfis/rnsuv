@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    @for(stock of stocks$ | async; track stock.code; let i = $index, f=$first, e=$even, c=$count) {
+        <div class="col card">
+            <app-stock-item [stock]="stock"></app-stock-item>
+        </div>
+    } 
+    @empty {
+    <h2>Ni delnic na seznamu!</h2>
+  }
+</div>
+
+</div>

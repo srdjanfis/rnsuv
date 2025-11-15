@@ -1,0 +1,92 @@
+<div class="row">
+    <div class="col-4 mx-auto">
+        <h2 class="mb-3">Create Stock</h2>
+        @if(message){
+            <div class="alert alert-info">
+            {{message}}
+            </div>
+        }   
+        <div class="form-group">
+            <form (ngSubmit)="createStock(stockForm)" #stockForm="ngForm">
+                <div class="mb-3 stock-name">
+                    <label for="stock-name" class="form-label">Stock Name</label>
+                    <input type="text"
+                    class="form-control"
+                    placeholder="Stock name"
+                    name="stock-name"
+                    required
+                    [(ngModel)]="stock.name"
+                    >
+                </div>
+                <div class="mb-3 stock-code">
+                    <label for="stock-code" class="form-label">Stock Code</label>
+                    <input type="text"
+                    class="form-control"
+                    placeholder="required"
+                    name="stock-code"
+                    required
+                    [(ngModel)]="stock.code"
+                    >
+                </div>
+                <div class="mb-3 stock-price">
+                    <label for="stock-price" class="form-label">Price</label>
+                    <input type="number"
+                    class="form-control"
+                    placeholder="Stock price"
+                    name="stock-price"
+                    [(ngModel)]="stock.price"
+                    >
+                </div>
+                <div class="mb-3 stock-previous-price">
+                    <label for="stock-previous-price" class="form-label">Previous price</label>
+                    <input type="number"
+                    class="form-control"
+                    placeholder="Previous price"
+                    name="stock-previous-price"
+                    [(ngModel)]="stock.previousPrice"
+                    >
+                </div>
+                <div class="mb-3">
+                    <label for="stock-exchange" class="form-label">Exchange</label>
+                    <select 
+                        class="form-select" 
+                        name="stock-exchange"
+                        [(ngModel)]="stock.exchange">
+                        @for(exchange of exchanges; track exchange) {
+                            <option [value]="exchange">
+                                {{exchange}}
+                            </option>
+                        }   
+                    </select>
+                </div>
+                <div class="mb-3 form-switch">
+                    <input 
+                        class="form-check-input" 
+                        type="checkbox" 
+                        name="stock-favorite"
+                        role="switch"
+                    [(ngModel)]="stock.favorite">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Favorite
+                    </label>
+                </div>
+                <div class="mb-3">
+                    <input
+                        type="checkbox"    
+                        class="form-check-input"
+                        name="confirm-checkbox"
+                        [(ngModel)]="confirmCreate">
+                    <label class="form-check-label" for="confirm-checkbox">
+                        I agree to create this stock!
+                    </label>
+                </div>
+                <div class="mb-3">
+                    <button [disabled]="!confirmCreate" class="btn btn-success" 
+                            type="submit">Create Stock</button>
+                </div>
+            </form>
+            <button class="btn btn-primary" (click)="initializeStock()">Reset stock</button>
+        </div>
+        <h4>Stock object: {{ stock | json }}</h4>
+    </div>
+</div>
