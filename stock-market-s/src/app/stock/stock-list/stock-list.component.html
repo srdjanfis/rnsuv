@@ -1,7 +1,0 @@
-<div class="container d-flex justify-content-center"> 
-    <div class="row">
-        <app-stock-item class="col" *ngFor="let stock of stocksObj"
-            [stock]="stock"
-            (stockEmitter)="onToggleFavorite($event)"></app-stock-item>
-    </div>
-</div>
